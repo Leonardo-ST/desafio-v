@@ -10,21 +10,13 @@ function App() {
   return (
   <div className='App'>
   <Navbar />
+  
  <Router>
   <Routes>
     <Route exact path="/" element={<Home /> } />
   </Routes>
  </Router>
 
-  {/*
-  <Router>
-  <Routes>
-    
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />  Rota para outra página 
-        </Routes>
-      </Router>
-  */}
   <Footer />
     </div>
   )

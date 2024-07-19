@@ -1,16 +1,15 @@
-import '../../css/Home.css'
+import '../../css/Home.css';
 
-function Home () {
+function Home() {
     return( 
- <body>
-        <div className='centro'>
-        <p>Agora pensar no texto</p>
+        <div className='body_da_pagina'>
+            <div className='centro'>
+                <p>Agora pensar no texto</p>
+            </div>
         </div>
-        
-        
- </body>
-    )
+    );
 }
 
-export default Home
+export default Home;
+
 //Arquivo principal da todo-list
