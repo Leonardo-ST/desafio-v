@@ -1,19 +1,55 @@
-.body_da_pagina{
+.body_da_pagina {
   color: white;
 }
+
 .centro {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .centro_quadro {
-    background-color: #7289DA;
-    padding: 30px; 
-    border-radius: 5px;
-    margin: auto;
-    margin-top: 10px;
-    max-height: auto; 
-    margin-bottom: 100px;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centro_quadro {
+  background-color: #7289DA;
+  padding: 30px;
+  border-radius: 5px;
+  margin: auto;
+  margin-top: 10px;
+  max-height: auto;
+  margin-bottom: 100px;
+}
+
+
+
+
+.editar-alert {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editar-alert-content {
+
+  color: #7289DA;
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.editar-alert-content input {
+  width: 90%;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.editar-alert-content button {
+  padding: 5px 10px;
+  margin: 5px;
+}

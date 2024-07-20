@@ -1,6 +1,6 @@
 import React from 'react';
 
-function TodoItem({ item, toggleComplete, deleteTodo }) {
+function TodoItem({ item, toggleComplete, deleteTodo, handleEdit }) {
   return (
     <div>
       <input
@@ -12,6 +12,7 @@ function TodoItem({ item, toggleComplete, deleteTodo }) {
         {item.text}
       </span>
       <button onClick={() => deleteTodo(item.id)}>excluir</button>
+      <button onClick={() => handleEdit(item.id, item.text)}>editar</button>
     </div>
   );
 }

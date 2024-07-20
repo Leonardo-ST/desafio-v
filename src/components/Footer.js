@@ -1,11 +1,13 @@
 import '../css/Footer.css'
 
 
+
+
 function Footer() {
     return (
         <div className='footer'>
 
-            <h1>Vai ficar o Footer</h1>
+            <h1> 2024 Copyright Equipe ?</h1>
 
         </div>
     )
