@@ -39,7 +39,7 @@ function Home() {
         <div className='body_da_pagina'>
             <div className='centro'>
                 <div className='centro_quadro'>
-                    <h3>oi</h3>
+                    <h3>Lista de tarefas</h3>
                     <TodoForm addTodo={addTodo} />
                     <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
                 </div>
