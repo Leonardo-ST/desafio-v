@@ -6,9 +6,9 @@ import '../css/Navbar.css'
 function Navbar() {
   return (
     <div className="navbar">
-        <nav>
-          <p>To-do List</p>
-        </nav>
+      <nav>
+        <p>To-do List</p>
+      </nav>
     </div>
   );
 }

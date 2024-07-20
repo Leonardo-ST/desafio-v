@@ -1,13 +1,13 @@
 import '../css/Footer.css'
 
 
-function Footer () {
-    return(
-    <div className='footer'>
+function Footer() {
+    return (
+        <div className='footer'>
 
-<h1>Vai ficar o Footer</h1>
+            <h1>Vai ficar o Footer</h1>
 
-    </div>
+        </div>
     )
 }
 

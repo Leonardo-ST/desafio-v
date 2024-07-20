@@ -8,3 +8,12 @@
     transform: translate(-50%, -50%);
   }
   
+  .centro_quadro {
+    background-color: #7289DA;
+    padding: 30px; 
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
+    max-height: auto; 
+    margin-bottom: 100px;
+  }

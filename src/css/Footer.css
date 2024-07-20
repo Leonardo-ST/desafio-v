@@ -1,8 +1,7 @@
 .footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #7289DA; /* Cor de fundo (opcional) */
-    /* Outros estilos do footer */
-  }
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #7289DA;
   
+}
