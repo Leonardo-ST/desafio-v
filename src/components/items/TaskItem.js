@@ -1,10 +1,11 @@
 import React from 'react';
+import '../../css/Home.css'
 import { FaTrashAlt } from "react-icons/fa";
 import { MdModeEdit } from "react-icons/md";
 
-function TodoItem({ item, toggleComplete, deleteTodo, handleEdit }) {
+function TaskItem({ item, toggleComplete, deleteTask, taskEdit }) {
   return (
-    <div>
+    <div className='body_da_pagina'>
       <input
         type="checkbox"
         checked={item.completed}
@@ -13,10 +14,10 @@ function TodoItem({ item, toggleComplete, deleteTodo, handleEdit }) {
       <span style={{ textDecoration: item.completed ? 'line-through' : 'none' }}>
         {item.text}
       </span>
-      <button onClick={() => deleteTodo(item.id)}><FaTrashAlt />excluir</button>
-      <button onClick={() => handleEdit(item.id, item.text)}><MdModeEdit />editar</button>
+      <button onClick={() => taskEdit(item.id, item.text)}><MdModeEdit />Editar</button>
+      <button onClick={() => deleteTask(item.id)}><FaTrashAlt />Excluir</button>
     </div>
   );
 }
 
-export default TodoItem;
+export default TaskItem;

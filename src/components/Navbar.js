@@ -7,7 +7,7 @@ function Navbar() {
   return (
     <div className="navbar">
       <nav>
-        <p>To-do List</p>
+        <h1>To-do Geek</h1>
       </nav>
     </div>
   );

@@ -1,57 +1,57 @@
 import React, { useState, useEffect } from 'react';
-import TodoList from '../items/TodoList';
-import TodoForm from '../items/TodoForm';
+import TaskList from '../items/TaskList';
+import TaskForm from '../items/TaskForm';
 import '../../css/Home.css';
 
 function Home() {
-    const [todos, setTodos] = useState([]);
+    const [tasks, setTasks] = useState([]);
     const [isEditing, setIsEditing] = useState(false);
-    const [currentTodo, setCurrentTodo] = useState({ id: null, text: '' });
+    const [currentTask, setCurrentTask] = useState({ id: null, text: '' });
 
     useEffect(() => {
-        const storedTodos = JSON.parse(localStorage.getItem('todos'));
-        if (storedTodos) {
-            setTodos(storedTodos);
+        const storedTasks = JSON.parse(localStorage.getItem('tasks'));
+        if (storedTasks) {
+            setTasks(storedTasks);
         }
     }, []);
 
-    const addTodo = text => {
-        const newTodo = { id: Date.now(), text, completed: false };
-        const updatedTodos = [...todos, newTodo];
-        setTodos(updatedTodos);
-        localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    const addTask = text => {
+        const newTask = { id: Date.now(), text, completed: false };
+        const updatedTasks = [...tasks, newTask];
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
     const toggleComplete = id => {
-        const updatedTodos = todos.map(todo =>
-            todo.id === id ? { ...todo, completed: !todo.completed } : todo
+        const updatedTasks = tasks.map(task =>
+            task.id === id ? { ...task, completed: !task.completed } : task
         );
-        setTodos(updatedTodos);
-        localStorage.setItem('todos', JSON.stringify(updatedTodos));
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    const deleteTodo = id => {
-        const updatedTodos = todos.filter(todo => todo.id !== id);
-        setTodos(updatedTodos);
-        localStorage.setItem('todos', JSON.stringify(updatedTodos));
+    const deleteTask = id => {
+        const updatedTasks = tasks.filter(tasks => tasks.id !== id);
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    const editTodo = (id, newText) => {
-        const updatedTodos = todos.map(todo =>
-            todo.id === id ? { ...todo, text: newText } : todo
+    const editTask = (id, newText) => {
+        const updatedTasks = tasks.map(task =>
+            task.id === id ? { ...task, text: newText } : task
         );
-        setTodos(updatedTodos);
-        localStorage.setItem('todos', JSON.stringify(updatedTodos));
+        setTasks(updatedTasks);
+        localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    const handleEdit = (id, text) => {
-        setCurrentTodo({ id, text });
+    const taskEdit = (id, text) => {
+        setCurrentTask({ id, text });
         setIsEditing(true);
     };
 
-    const handleSave = () => {
-        if (currentTodo.text) {
-            editTodo(currentTodo.id, currentTodo.text);
+    const taskSave = () => {
+        if (currentTask.text) {
+            editTask(currentTask.id, currentTask.text);
             setIsEditing(false);
         }
     };
@@ -61,8 +61,11 @@ function Home() {
             <div className='centro'>
                 <div className='centro_quadro'>
                     <h3>Lista de tarefas</h3>
-                    <TodoForm addTodo={addTodo} />
-                    <TodoList todos={todos} toggleComplete={toggleComplete} deleteTodo={deleteTodo} handleEdit={handleEdit} />
+                    <TaskForm addTask={addTask} />
+                </div>
+                <div className='centro_quadro'>
+                <h3>Suas Tarefas:</h3>
+                <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} taskEdit={taskEdit} />
                 </div>
             </div>
 
@@ -72,16 +75,16 @@ function Home() {
                         <h2>Editar Tarefa</h2>
                         <input
                             type="text"
-                            value={currentTodo.text}
-                            onChange={(e) => setCurrentTodo({ ...currentTodo, text: e.target.value })}
+                            value={currentTask.text}
+                            onChange={(e) => setCurrentTask({ ...currentTask, text: e.target.value })}
                         />
-                        <button onClick={handleSave}>salvar</button>
+                        <button onClick={taskSave}>salvar</button>
                         <button onClick={() => setIsEditing(false)}>cancelar</button>
                     </div>
                 </div>
             )}
 
-            
+
         </div>
     );
 }
