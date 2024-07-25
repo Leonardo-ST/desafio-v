@@ -61,11 +61,12 @@ function Home() {
             <div className='centro'>
                 <div className='centro_quadro'>
                     <h3>Lista de tarefas</h3>
-                    <TaskForm addTask={addTask} />
+                   
                 </div>
                 <div className='centro_quadro'>
                 <h3>Suas Tarefas:</h3>
                 <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} taskEdit={taskEdit} />
+                <TaskForm addTask={addTask} />
                 </div>
             </div>
 
