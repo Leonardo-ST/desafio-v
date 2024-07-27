@@ -1,5 +1,9 @@
 .body_da_pagina {
   color: white;
+  background-color: #FCBF4A;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 
 .centro {
@@ -7,19 +11,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+
 }
 
 .centro_quadro {
+  position: fixed;
   background-color: #F67F00;
   padding: 30px;
   border-radius: 5px;
   margin: auto;
-  margin-top: 10px;
+  margin-top: -200px;
+  margin-left: -200px;
   max-height: auto;
   margin-bottom: 100px;
+  width: 400px;
 }
 
-.form-area{
+.form-area {
   padding-bottom: 15px;
 }
 
@@ -83,4 +92,8 @@ blockquote {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+}
+
+.info {
+  margin-left: -200px;
 }
