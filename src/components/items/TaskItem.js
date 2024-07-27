@@ -11,9 +11,12 @@ function TaskItem({ item, toggleComplete, deleteTask, taskEdit }) {
         checked={item.completed}
         onChange={() => toggleComplete(item.id)}
       />
-      <span style={{ textDecoration: item.completed ? 'line-through' : 'none' }}>
-        {item.text}
+      <span style={{ textDecoration: item.completed ? 'line-through' : 'none'   
+ }}>
+        <strong>{item.text}</strong>
       </span>
+      <br />
+      <div><blockquote>{item.description || "Sem descrição"}</blockquote></div> 
       <button onClick={() => taskEdit(item.id, item.text)}><MdModeEdit />Editar</button>
       <button onClick={() => deleteTask(item.id)}><FaTrashAlt />Excluir</button>
     </div>

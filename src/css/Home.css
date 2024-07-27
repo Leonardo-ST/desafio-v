@@ -10,7 +10,7 @@
 }
 
 .centro_quadro {
-  background-color: #7289DA;
+  background-color: #F67F00;
   padding: 30px;
   border-radius: 5px;
   margin: auto;
@@ -25,6 +25,7 @@
 
 .text_box {
   border-radius: 5px;
+  background-color: #ffffff;
 }
 
 
@@ -47,7 +48,7 @@
   background: white;
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px #0000001a;
 }
 
 .editar-alert-content input {
@@ -65,4 +66,21 @@
   border-radius: 10px;
   width: 30px;
   height: 30px;
+}
+
+blockquote {
+  border-left: 3px solid #ccc;
+  padding: 0.63em;
+  margin: 1em 20px;
+}
+
+.bloquinho_home {
+  width: 150px
+}
+
+.background {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import TaskList from '../items/TaskList';
 import TaskForm from '../items/TaskForm';
 import '../../css/Home.css';
+import bloquinho from './../../images/bloquinho.png'
 
 function Home() {
     const [tasks, setTasks] = useState([]);
@@ -15,8 +16,8 @@ function Home() {
         }
     }, []);
 
-    const addTask = text => {
-        const newTask = { id: Date.now(), text, completed: false };
+    const addTask = (text, description) => {
+        const newTask = { id: Date.now(), text, description, completed: false };
         const updatedTasks = [...tasks, newTask];
         setTasks(updatedTasks);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
@@ -36,9 +37,9 @@ function Home() {
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
-    const editTask = (id, newText) => {
+    const editTask = (id, newText, newDescription) => {
         const updatedTasks = tasks.map(task =>
-            task.id === id ? { ...task, text: newText } : task
+            task.id === id ? { ...task, text: newText, description: newDescription } : task
         );
         setTasks(updatedTasks);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
@@ -57,36 +58,33 @@ function Home() {
     };
 
     return (
-        <div className='body_da_pagina'>
-            <div className='centro'>
-                <div className='centro_quadro'>
-                    <h3>Lista de tarefas</h3>
-                   
-                </div>
-                <div className='centro_quadro'>
-                <h3>Suas Tarefas:</h3>
-                <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} taskEdit={taskEdit} />
-                <TaskForm addTask={addTask} />
-                </div>
-            </div>
-
-            {isEditing && (
-                <div className="editar-alert">
-                    <div className="editar-alert-content">
-                        <h2>Editar Tarefa</h2>
-                        <input
-                            type="text"
-                            value={currentTask.text}
-                            onChange={(e) => setCurrentTask({ ...currentTask, text: e.target.value })}
-                        />
-                        <button onClick={taskSave}>salvar</button>
-                        <button onClick={() => setIsEditing(false)}>cancelar</button>
+            <div className='body_da_pagina'>
+                <div className='centro'>
+                    <div className='centro_quadro'>
+                        <img src={bloquinho} alt="Bloquinho de notas" className='bloquinho_home' />
+                        <h3>Lista de tarefas</h3>
+                        <TaskList tasks={tasks} toggleComplete={toggleComplete} deleteTask={deleteTask} taskEdit={taskEdit} />
+                        <TaskForm addTask={addTask} />
                     </div>
                 </div>
-            )}
 
+                {isEditing && (
+                    <div className="editar-alert">
+                        <div className="editar-alert-content">
+                            <h2>Editar Tarefa</h2>
+                            <input
+                                type="text"
+                                value={currentTask.text}
+                                onChange={(e) => setCurrentTask({ ...currentTask, text: e.target.value })}
+                            />
+                            <button onClick={taskSave}>salvar</button>
+                            <button onClick={() => setIsEditing(false)}>cancelar</button>
+                        </div>
+                    </div>
+                )}
 
-        </div>
+            </div>
+       
     );
 }
 
