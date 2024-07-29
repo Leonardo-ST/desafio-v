@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap");
 
 .navbar {
-    text-align: left;
-    padding-left: 40px ;
-    display: flex;
-    width: 100%;
-    z-index: 100;
-    background-color: #F67F00;
+  text-align: left;
+  padding-left: 40px;
+  display: flex;
+  width: 100%;
+  z-index: 100;
+  background-color: #f67f00;
 }
-@media screen and (max-width: 768px){
-    .navbar{
-        width: 90.5%;
-    }
+@media screen and (max-width: 768px) {
+  .navbar {
+    width: 90.5%;
+  }
 }
 
 /*

@@ -26,7 +26,8 @@
   justify-content: center;
   margin-left: 10px;
   align-items: center;
-  width: 400px;
+  height: max-content;
+  width: max-content;
   border: solid 2px rgba(0, 0, 0, 0.082);
 }
 
