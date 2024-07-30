@@ -58,7 +58,7 @@ function Home() {
     };
 
     return (
-        <div className='body_da_pagina'>
+        <div>
             <div className='centro'>
                 <div className='centro_quadro'>
                     <img src={bloquinho} alt="Bloquinho de notas" className='bloquinho_home' />

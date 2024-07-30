@@ -5,7 +5,8 @@ import { MdModeEdit } from "react-icons/md";
 
 function TaskItem({ item, toggleComplete, deleteTask, taskEdit }) {
   return (
-    <div className='body_da_pagina'>
+    <div className='section'>
+      <div class="todo">
       <input
         type="checkbox"
         checked={item.completed}
@@ -15,10 +16,13 @@ function TaskItem({ item, toggleComplete, deleteTask, taskEdit }) {
  }}>
         <strong>{item.text}</strong>
       </span>
+      </div>
       <br />
       <div><blockquote>{item.description || "Sem descrição"}</blockquote></div> 
-      <button onClick={() => taskEdit(item.id, item.text)}><MdModeEdit />Editar</button>
-      <button onClick={() => deleteTask(item.id)}><FaTrashAlt />Excluir</button>
+      <div>
+        <button onClick={() => taskEdit(item.id, item.text)} className='btn-secondary'><MdModeEdit />Editar</button>
+        <button onClick={() => deleteTask(item.id)} className='btn-remove'><FaTrashAlt />Excluir</button>
+      </div>
     </div>
   );
 }

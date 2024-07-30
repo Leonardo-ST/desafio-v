@@ -33,7 +33,7 @@ function TaskForm({ addTask }) {
                         value={description}
                         onChange={e => setDescription(e.target.value)}
                     />
-                    <button type="submit">Adicionar</button>
+                    <button type="submit" className='btn-primary'>Adicionar</button>
                 </>
             ) : (
                 <div>

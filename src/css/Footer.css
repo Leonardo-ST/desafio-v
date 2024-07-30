@@ -1,11 +1,16 @@
 .footer {
-  position: fixed;
-  bottom: 0;
+  background-color: #f67f00;
   width: 100%;
-  background-color: #F67F00;
 }
-
 .footer h1 {
   font-weight: normal;
   font-size: 16px;
 }
+
+@media screen and (max-width: 768px){
+
+  .footer{
+    width: 100%;
+  }
+
+  }
