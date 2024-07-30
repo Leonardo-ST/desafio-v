@@ -1,2 +1,2 @@
-## Projeto em desenvolvimento
-Sera uma to-do list para o desafio V inovaMA
+## Sunrise List
+To-do List criada para o desafio V do inovaMa
