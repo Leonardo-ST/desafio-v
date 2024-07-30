@@ -1,13 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Playwrite+CL:wght@100..400&display=swap");
 
 .navbar {
+  margin-top: 0;
   text-align: left;
   padding-left: 40px;
   display: flex;
   width: 100%;
   z-index: 100;
   background-color: #f67f00;
+  align-items: center;
+
 }
+
 @media screen and (max-width: 768px) {
   .navbar {
     width: 90.5%;
